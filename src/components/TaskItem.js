@@ -2,22 +2,26 @@ import React, { useState } from 'react';
 import { useTasks } from '../context/TaskContext';
 
 export const TaskItem = ({ task }) => {
+  // Extract state actions from custom context hook
   const { toggleTask, editTask, deleteTask } = useTasks();
+  // Local state to manage component display mode (read-only vs inline editing)
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(task.text);
 
+  // Commit edited text changes back to global state
   const handleSave = () => {
     if (editText.trim()) {
-      editTask(task.id, editText.trim());
-      setIsEditing(false);
+      editTask(task.id, editText.trim());// Dispatch update action
+      setIsEditing(false);// Exit inline edit mode
     }
   };
 
+  // Keyboard shortcut handlers (Enter to save, Escape to cancel)
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') handleSave();
     if (e.key === 'Escape') {
-      setEditText(task.text);
-      setIsEditing(false);
+      setEditText(task.text);// Revert back to original task text
+      setIsEditing(false);// Exit inline edit mode
     }
   };
 

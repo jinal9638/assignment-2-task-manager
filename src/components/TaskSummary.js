@@ -2,8 +2,10 @@ import React from 'react';
 import { useTasks } from '../context/TaskContext';
 
 export const TaskSummary = () => {
+  // Extract task array and clear handler from context
   const { tasks, clearAllTasks } = useTasks();
 
+  // Compute live state metrics directly from global tasks array
   const totalTasks = tasks.length;
   const completedTasks = tasks.filter((t) => t.completed).length;
   const pendingTasks = totalTasks - completedTasks;

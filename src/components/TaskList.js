@@ -3,11 +3,12 @@ import { useTasks } from '../context/TaskContext';
 import { TaskItem } from './TaskItem';
 
 export const TaskList = () => {
+  // Access global task array
   const { tasks } = useTasks();
-
+  // Empty state fallback visual when list contains 0 tasks
   if (tasks.length === 0) {
     return <p className="empty-msg">No tasks remaining. Add one above!</p>;
-  }//if task length zero showing a paragrapgh
+  }
 
   return (
     //unordered list for added task list

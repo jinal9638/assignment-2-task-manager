@@ -7,6 +7,7 @@ import './App.css';
 
 export default function App() {
   return (
+    // Wrap entire app tree inside TaskProvider to grant child components access to global context
     <TaskProvider>
       <div className="app-container">
         <header className="app-header">

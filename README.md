@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Task Manager Application (Context API & useReducer)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully responsive Task Manager web application built with **React**, demonstrating advanced state management using **Context API** and the **`useReducer`** hook. This project isolates state logic from UI components, eliminates prop-drilling, and provides an intuitive user interface across Mobile, Tablet, and Desktop screens.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Key Features
 
-### `npm start`
+- **Global State Management:** Powered by React's Context API and `useReducer` hook.
+- **Task Operations (CRUD):**
+  - **Add Task:** Create new tasks with form validation.
+  - **Toggle Completion:** Mark tasks as complete/incomplete with visual feedback (line-through effect).
+  - **Edit Task:** Modify existing task text inline (supports `Enter` to save, `Escape` to cancel).
+  - **Delete Task:** Remove single tasks individually.
+  - **Clear All:** Wipe all tasks simultaneously with a single action.
+- **Live Summary Metrics:** Real-time dynamic counts for **Total**, **Completed**, and **Pending** tasks.
+- **Fully Responsive Design:** Customized viewports optimized for **Desktop**, **Tablet**, and **Mobile** devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  State Management Architecture
 
-### `npm test`
+The project utilizes a unidirectional data flow to handle state updates efficiently:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **`taskReducer.js`**: Pure reducer function defining action types (`ADD_TASK`, `TOGGLE_TASK`, `EDIT_TASK`, `DELETE_TASK`, `CLEAR_ALL`) and handling state mutations without direct side effects.
+2. **`TaskContext.jsx`**: Global context provider wrapping the app hierarchy and exposing dispatch helper methods via a custom `useTasks()` hook.
+3. **UI Components (`TaskInput`, `TaskList`, `TaskItem`, `TaskSummary`)**: Decoupled presentation components consuming state and dispatching actions through context without prop-drilling.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```text
+Task_Manager_YourName/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── TaskInput.js
+│   │   ├── TaskItem.js
+│   │   ├── TaskList.js
+│   │   └── TaskSummary.js
+│   ├── context/
+│   │   ├── TaskContext.js
+│   │   └── taskReducer.js
+│   ├── App.css
+│   ├── App.js
+│   ├── index.css
+│   └── index.js
+├── screenshots/
+│   ├── desktop-view.jpg
+│   ├── tablet-view.jpg
+│   └── mobile-view.jpg
+├── package.json
+├── package-lock.json
+└── README.md
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## `Deployement`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: []
