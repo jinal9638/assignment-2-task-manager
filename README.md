@@ -59,4 +59,4 @@ Task_Manager_YourName/
 
 ## `Deployement`
 
-This section has moved here: []
+This section has moved here: [https://assignment-2-task-manager.vercel.app/]
