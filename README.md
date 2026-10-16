@@ -30,7 +30,7 @@ The project utilizes a unidirectional data flow to handle state updates efficien
 
 ## Project Structure
 
-```text
+
 Task_Manager_YourName/
 ├── public/
 │   └── index.html
